@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sinkboy-chen.github.io/sinkboy-blog/</loc>
+    <loc>https://sinkboy-chen.github.io/</loc>
+    <lastmod>2023-10-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinkboy-chen.github.io/post/</loc>
+    <lastmod>2023-10-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinkboy-chen.github.io/p/test/</loc>
+    <lastmod>2023-10-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sinkboy-chen.github.io/archives/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sinkboy-chen.github.io/sinkboy-blog/archives/</loc>
+    <loc>https://sinkboy-chen.github.io/page/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://sinkboy-chen.github.io/sinkboy-blog/page/</loc>
-    <lastmod>2022-03-06T00:00:00+00:00</lastmod>
+    <loc>https://sinkboy-chen.github.io/categories/</loc>
   </url><url>
-    <loc>https://sinkboy-chen.github.io/sinkboy-blog/categories/</loc>
+    <loc>https://sinkboy-chen.github.io/search/</loc>
   </url><url>
-    <loc>https://sinkboy-chen.github.io/sinkboy-blog/search/</loc>
-  </url><url>
-    <loc>https://sinkboy-chen.github.io/sinkboy-blog/tags/</loc>
+    <loc>https://sinkboy-chen.github.io/tags/</loc>
   </url>
 </urlset>
