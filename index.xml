@@ -22,10 +22,6 @@
 &lt;p&gt;我想學厲害的AI。我看文章說訓練AI的圖片要用程式爬，我就去學了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-<<<<<<< HEAD
-&lt;p&gt;我學完之後爬了一大堆漫畫和各式各樣的網站。爬蟲也對我之後接觸web表層的知識有些幫助。&lt;/p&gt;
-=======
->>>>>>> fix/head-detached
 &lt;h3 id=&#34;favorite-project&#34;&gt;favorite project&lt;/h3&gt;
 &lt;p&gt;我的高中英文老師要我們每個禮拜寫5篇線上閱讀測驗。我想用爬蟲幫我寫。&lt;/p&gt;
 &lt;p&gt;但那時候還沒有chatgpt，我要怎麼讓程式回答問題呢？我想到：如果我把網站的題目全做過一遍、存下答案。當我再遇到時，查表就好了。&lt;/p&gt;
@@ -48,12 +44,9 @@
 &lt;div class=&#34;warning-box&#34;&gt;
     在此向立意良善的網站和認真的英文老師道歉。
 &lt;/div&gt;
-<<<<<<< HEAD
-=======
 &lt;h3 id=&#34;總結&#34;&gt;總結&lt;/h3&gt;
 &lt;p&gt;學完爬蟲後，我爬了一大堆漫畫和各式各樣的網站，也了解了一些web表層的知識。
 我覺得爬蟲是一個好入手、有成就感、實用的好東西。&lt;/p&gt;
->>>>>>> fix/head-detached
 &lt;hr&gt;
 </description>
         </item>
