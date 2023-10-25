@@ -6,17 +6,59 @@
         <description>Recent content in 回顧 on Sinkboy</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Sun, 22 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sinkboy-chen.github.io/categories/%E5%9B%9E%E9%A1%A7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 25 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sinkboy-chen.github.io/categories/%E5%9B%9E%E9%A1%A7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>My High School Coding Journey II</title>
+        <link>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/</link>
+        <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/</guid>
+        <description>&lt;img src="https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/crawler2.jpg" alt="Featured image of post My High School Coding Journey II" /&gt;&lt;h3 id=&#34;契機&#34;&gt;契機&lt;/h3&gt;
+&lt;p&gt;我不確定我學爬蟲的契機是什麼，我腦中有兩個版本:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;我看的漫畫網站很卡，一張圖片都要載很久。恰巧那時候看到關於爬蟲的文章，我就想：把圖片用程式全部下載下來再看，感覺會很爽？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我想學厲害的AI。我看文章說訓練AI的圖片要用程式爬，我就去學了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我學完之後爬了一大堆漫畫和各式各樣的網站。爬蟲也對我之後接觸web表層的知識有些幫助。&lt;/p&gt;
+&lt;h3 id=&#34;favorite-project&#34;&gt;favorite project&lt;/h3&gt;
+&lt;p&gt;我的高中英文老師要我們每個禮拜寫5篇線上閱讀測驗。我想用爬蟲幫我寫。&lt;/p&gt;
+&lt;p&gt;但那時候還沒有chatgpt，我要怎麼讓程式回答問題呢？我想到：如果我把網站的題目全做過一遍、存下答案。當我再遇到時，查表就好了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/readtheory.png&#34;
+	width=&#34;2880&#34;
+	height=&#34;2254&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;高中的帳號登不進去，我太無聊開了另一個帳號&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;127&#34;
+		data-flex-basis=&#34;306px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;我把code重新整理上傳到github：&lt;a class=&#34;link&#34; href=&#34;https://github.com/sinkboy-chen/readtheory-robot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/sinkboy-chen/readtheory-robot&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;warning-box&#34;&gt;
+    在此向立意良善的網站和認真的英文老師道歉。
+&lt;/div&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        <item>
         <title>My High School Coding Journey I</title>
         <link>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-i/</link>
         <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
         
         <guid>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-i/</guid>
         <description>&lt;img src="https://sinkboy-chen.github.io/p/my-high-school-coding-journey-i/rocket4.jpg" alt="Featured image of post My High School Coding Journey I" /&gt;&lt;h3 id=&#34;the-start&#34;&gt;The Start&lt;/h3&gt;
-&lt;p&gt;國中升高中的暑假，我夢想以後當航太工程師。我想到：火箭也需要程式才能運作吧。所以我就去學程式了。&lt;/p&gt;
+&lt;p&gt;國中升高中的暑假，我夢想當個航太工程師。我想到：火箭也需要程式才能運作吧。所以我就去學程式了。&lt;/p&gt;
 &lt;p&gt;我選擇python。新手的我不知道怎麼樣的教學算好，就東學一點、西學一點。&lt;/p&gt;
 &lt;h3 id=&#34;first-project&#34;&gt;First Project&lt;/h3&gt;
-&lt;p&gt;我不會中打，都看著鍵盤戳，有時候打了一堆才發現是英文ಠ⁠︵⁠ಠ。我就寫了把英文轉成注音的這個東西。(我完全沒改，原汁原味)&lt;/p&gt;
+&lt;p&gt;我不會中打，都看著鍵盤戳，有時候打了一堆才發現是英文ಠ⁠︵⁠ಠ。因此，我就寫了把英文轉成注音的這個東西。(我完全沒改，原汁原味)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -89,7 +131,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;di&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;letter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;成功後，我覺得我基本語法學得差不多了。我便開始四處探索，一轉眼就是三年。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;成功後，我覺得我基本語法學得差不多了。我便開始四處探索，一轉眼就是三年過去。&lt;/p&gt;
 &lt;hr&gt;
 </description>
         </item>
