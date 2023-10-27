@@ -8,11 +8,11 @@
         <language>zh-tw</language>
         <lastBuildDate>Wed, 25 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sinkboy-chen.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>My High School Coding Journey II</title>
-        <link>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/</link>
+        <link>https://sinkboy-chen.github.io/p/high-school-1/</link>
         <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/</guid>
-        <description>&lt;img src="https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/crawler2.jpg" alt="Featured image of post My High School Coding Journey II" /&gt;&lt;h3 id=&#34;契機&#34;&gt;契機&lt;/h3&gt;
+        <guid>https://sinkboy-chen.github.io/p/high-school-1/</guid>
+        <description>&lt;img src="https://sinkboy-chen.github.io/p/high-school-1/crawler2.jpg" alt="Featured image of post My High School Coding Journey II" /&gt;&lt;h3 id=&#34;契機&#34;&gt;契機&lt;/h3&gt;
 &lt;p&gt;我不確定我學爬蟲的契機是什麼，我腦中有兩個版本:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -25,7 +25,7 @@
 &lt;h3 id=&#34;favorite-project&#34;&gt;favorite project&lt;/h3&gt;
 &lt;p&gt;我的高中英文老師要我們每個禮拜寫5篇線上閱讀測驗。我想用爬蟲幫我寫。&lt;/p&gt;
 &lt;p&gt;但那時候還沒有chatgpt，我要怎麼讓程式回答問題呢？我想到：如果我把網站的題目全做過一遍、存下答案。當我再遇到時，查表就好了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/my-high-school-coding-journey-ii/readtheory.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-1/readtheory.png&#34;
 	width=&#34;2880&#34;
 	height=&#34;2254&#34;
 	
@@ -52,11 +52,11 @@
         </item>
         <item>
         <title>My High School Coding Journey I</title>
-        <link>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-i/</link>
+        <link>https://sinkboy-chen.github.io/p/high-school-0/</link>
         <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://sinkboy-chen.github.io/p/my-high-school-coding-journey-i/</guid>
-        <description>&lt;img src="https://sinkboy-chen.github.io/p/my-high-school-coding-journey-i/rocket4.jpg" alt="Featured image of post My High School Coding Journey I" /&gt;&lt;h3 id=&#34;the-start&#34;&gt;The Start&lt;/h3&gt;
+        <guid>https://sinkboy-chen.github.io/p/high-school-0/</guid>
+        <description>&lt;img src="https://sinkboy-chen.github.io/p/high-school-0/rocket4.jpg" alt="Featured image of post My High School Coding Journey I" /&gt;&lt;h3 id=&#34;the-start&#34;&gt;The Start&lt;/h3&gt;
 &lt;p&gt;國中升高中的暑假，我夢想當個航太工程師。我想到：火箭也需要程式才能運作吧。所以我就去學程式了。&lt;/p&gt;
 &lt;p&gt;我選擇python。新手的我不知道怎麼樣的教學算好，就東學一點、西學一點。&lt;/p&gt;
 &lt;h3 id=&#34;first-project&#34;&gt;First Project&lt;/h3&gt;
