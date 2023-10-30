@@ -6,7 +6,83 @@
         <description>Recent content in 回顧 on Sinkboy</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Wed, 25 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sinkboy-chen.github.io/categories/%E5%9B%9E%E9%A1%A7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sinkboy-chen.github.io/categories/%E5%9B%9E%E9%A1%A7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>My High School Coding Journey III</title>
+        <link>https://sinkboy-chen.github.io/p/high-school-2/</link>
+        <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://sinkboy-chen.github.io/p/high-school-2/</guid>
+        <description>&lt;div class=&#34;success-box&#34;&gt;
+    以下漏洞在第一時間回報並已修復。
+&lt;/div&gt;
+&lt;p&gt;其實這只是用暴力破解的。但這是我第一次找到漏洞，我想記錄下來。&lt;/p&gt;
+&lt;h3 id=&#34;前情提要&#34;&gt;前情提要&lt;/h3&gt;
+&lt;p&gt;我高二時正逢新冠疫情，學校改成線上上課。我跟同學們會在老師留下來的會議教室玩你畫我猜。但我玩的不夠盡興，因此去下載了線上桌遊的遊戲。&lt;/p&gt;
+&lt;p&gt;那個遊戲中，有可以用4位數密碼鎖起來的私人房間。可以嘗試無限多次密碼，但使用者介面會有些停頓。我想：如果直接從遊戲背後運作的程式下手，是不是就可以避開使用者介面的停頓，快速的嘗試所有4位數組合、找到密碼?&lt;/p&gt;
+&lt;h3 id=&#34;尋找工具&#34;&gt;尋找工具&lt;/h3&gt;
+&lt;p&gt;我的目標很明確，我要了解這個遊戲：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;怎麼讓我的手機跟伺服器連線&lt;/li&gt;
+&lt;li&gt;怎麼尋問伺服器輸入的密碼是否正確&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我找到了&lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&amp;amp;hl=en_US&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;攔截網路封包的工具&lt;/a&gt;。透過這個工具，我可以看到各個app向網路傳送了什麼資料。&lt;/p&gt;
+&lt;h3 id=&#34;分析網路封包&#34;&gt;分析網路封包&lt;/h3&gt;
+&lt;p&gt;我攔截了嘗試遊戲房間密碼時，遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到了一筆顯示我嘗試的密碼&amp;quot;0000&amp;quot;及&amp;quot;密碼不正確&amp;quot;。我讓該封包以hex呈現並開始分析。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-2/network1.png&#34;
+	width=&#34;1080&#34;
+	height=&#34;1705&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;其中幾筆資料&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;63&#34;
+		data-flex-basis=&#34;152px&#34;
+	
+&gt; &lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-2/network3.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;1885&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;嘗試的密碼為0000&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;57&#34;
+		data-flex-basis=&#34;137px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;說是分析，我其實完全沒頭緒。我根本沒碰過這種東西啊，誰知道他在講甚麼，我那時連hex是甚麼都不知道。&lt;/p&gt;
+&lt;p&gt;前面說過這是疫情期間嘛。但當我研究的正起勁時，隔天開始又要回學校實體上課了。我搭公車去上學時，看著這坨我也看不懂的數字。我從第三人稱視角想像自己，覺得我自己超帥的，完全有駭客的感覺。&lt;/p&gt;
+&lt;p&gt;回到正題，當我漸漸絕望時，我看出了一些意義：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;該封包的第一筆資料類似打招呼，我的手機會向伺服器傳送id和password。如果正確，伺服器會回傳&amp;quot;ok&amp;quot;。&lt;/li&gt;
+&lt;li&gt;每則訊息開頭8個數字是訊息的長度&lt;/li&gt;
+&lt;li&gt;第二行前8個數字是時間&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-2/network7.jpg&#34;
+	width=&#34;1080&#34;
+	height=&#34;558&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;試著分析他們的protocol&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;193&#34;
+		data-flex-basis=&#34;464px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        <item>
         <title>My High School Coding Journey II</title>
         <link>https://sinkboy-chen.github.io/p/high-school-1/</link>
         <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
@@ -41,7 +117,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;我把code重新整理上傳到github：&lt;a class=&#34;link&#34; href=&#34;https://github.com/sinkboy-chen/readtheory-robot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/sinkboy-chen/readtheory-robot&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;warning-box&#34;&gt;
+&lt;div class=&#34;info-box&#34;&gt;
     在此向立意良善的網站和認真的英文老師道歉。
 &lt;/div&gt;
 &lt;h3 id=&#34;總結&#34;&gt;總結&lt;/h3&gt;
