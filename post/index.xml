@@ -7,29 +7,29 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
         <lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://sinkboy-chen.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>My High School Coding Journey III</title>
-        <link>https://sinkboy-chen.github.io/p/high-school-2/</link>
+        <title>Cracking Game Room Password</title>
+        <link>https://sinkboy-chen.github.io/p/cracking-game-room-password/</link>
         <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://sinkboy-chen.github.io/p/high-school-2/</guid>
-        <description>&lt;div class=&#34;success-box&#34;&gt;
+        <guid>https://sinkboy-chen.github.io/p/cracking-game-room-password/</guid>
+        <description>&lt;img src="https://sinkboy-chen.github.io/p/cracking-game-room-password/hacker_baby0.jpg" alt="Featured image of post Cracking Game Room Password" /&gt;&lt;div class=&#34;success-box&#34;&gt;
     以下漏洞在第一時間回報並已修復。
 &lt;/div&gt;
 &lt;p&gt;其實這只是用暴力破解的。但這是我第一次找到漏洞，我想記錄下來。&lt;/p&gt;
 &lt;h3 id=&#34;前情提要&#34;&gt;前情提要&lt;/h3&gt;
-&lt;p&gt;我高二時正逢新冠疫情，學校改成線上上課。我跟同學們會在老師留下來的會議教室玩你畫我猜。但我玩的不夠盡興，因此去下載了線上桌遊的遊戲。&lt;/p&gt;
-&lt;p&gt;那個遊戲中，有可以用4位數密碼鎖起來的私人房間。可以嘗試無限多次密碼，但使用者介面會有些停頓。我想：如果直接從遊戲背後運作的程式下手，是不是就可以避開使用者介面的停頓，快速的嘗試所有4位數組合、找到密碼?&lt;/p&gt;
+&lt;p&gt;我高二時正逢新冠疫情，學校改成線上上課。我跟同學們會在老師留下來的會議教室玩你畫我猜。但我玩的不夠盡興，因此去下載了線上桌遊手遊。&lt;/p&gt;
+&lt;p&gt;那個手遊中，有可以用4位數密碼鎖起來的私人房間。可以嘗試無限多次密碼，但使用者介面會有些停頓。我想：如果直接從遊戲背後運作的程式下手，是不是可以避開使用者介面的停頓，快速的嘗試所有4位數組合、找到密碼?&lt;/p&gt;
 &lt;h3 id=&#34;尋找工具&#34;&gt;尋找工具&lt;/h3&gt;
-&lt;p&gt;我的目標很明確，我要了解這個遊戲：&lt;/p&gt;
+&lt;p&gt;我的目標明確，要了解這個遊戲：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;怎麼讓我的手機跟伺服器連線&lt;/li&gt;
+&lt;li&gt;怎麼讓手機跟伺服器連線&lt;/li&gt;
 &lt;li&gt;怎麼尋問伺服器輸入的密碼是否正確&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;我找到了&lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&amp;amp;hl=en_US&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;攔截網路封包的工具&lt;/a&gt;。透過這個工具，我可以看到各個app向網路傳送了什麼資料。&lt;/p&gt;
+    &gt;攔截網路封包的工具&lt;/a&gt;。透過這個工具，可以看到各個app向網路傳送的資料。&lt;/p&gt;
 &lt;h3 id=&#34;分析網路封包&#34;&gt;分析網路封包&lt;/h3&gt;
-&lt;p&gt;我攔截了嘗試遊戲房間密碼時，遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到了一筆顯示我嘗試的密碼&amp;quot;0000&amp;quot;及&amp;quot;密碼不正確&amp;quot;。我讓該封包以hex呈現並開始分析。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-2/network1.png&#34;
+&lt;p&gt;當我嘗試遊戲房間密碼時，那個app攔截遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到了一筆顯示我嘗試的密碼&amp;quot;0000&amp;quot;及&amp;quot;密碼不正確&amp;quot;。我讓該封包以hex呈現並開始分析。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/network1.png&#34;
 	width=&#34;1080&#34;
 	height=&#34;1705&#34;
 	
@@ -42,7 +42,7 @@
 		data-flex-grow=&#34;63&#34;
 		data-flex-basis=&#34;152px&#34;
 	
-&gt; &lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-2/network3.jpg&#34;
+&gt; &lt;img src=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/network3.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;1885&#34;
 	
@@ -56,22 +56,23 @@
 		data-flex-basis=&#34;137px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;說是分析，我其實完全沒頭緒。我根本沒碰過這種東西啊，誰知道他在講甚麼，我那時連hex是甚麼都不知道。&lt;/p&gt;
-&lt;p&gt;前面說過這是疫情期間嘛。但當我研究的正起勁時，隔天開始又要回學校實體上課了。我搭公車去上學時，看著這坨我也看不懂的數字。我從第三人稱視角想像自己，覺得我自己超帥的，完全有駭客的感覺。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前面說過這是疫情期間嘛。當我研究正起勁時，隔天開始要回學校實體上課。早上我在擠滿人的公車去上學，一邊看著一串亂碼。我從第三人稱視角想像自己，覺得自己超帥的，完全有駭客的感覺。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;回到正題，當我漸漸絕望時，我看出了一些意義：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;該封包的第一筆資料類似打招呼，我的手機會向伺服器傳送id和password。如果正確，伺服器會回傳&amp;quot;ok&amp;quot;。&lt;/li&gt;
-&lt;li&gt;每則訊息開頭8個數字是訊息的長度&lt;/li&gt;
-&lt;li&gt;第二行前8個數字是時間&lt;/li&gt;
+&lt;li&gt;該封包的第一筆資料類似打招呼。遊戲從我的手機向伺服器傳送id和password。如果正確，伺服器會回傳&amp;quot;ok&amp;quot;。&lt;/li&gt;
+&lt;li&gt;每則訊息開頭前8個數字是訊息的長度。&lt;/li&gt;
+&lt;li&gt;第二行前8個數字是時間。&lt;/li&gt;
 &lt;li&gt;&amp;hellip;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-2/network7.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/network7.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;558&#34;
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;試著分析他們的protocol&#34;
+		alt=&#34;試著分析遊戲與伺服器間的協議&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
@@ -79,16 +80,19 @@
 		data-flex-basis=&#34;464px&#34;
 	
 &gt;&lt;/p&gt;
+&lt;h3 id=&#34;exploitpcracking-game-room-password-exploit&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password-exploit/&#34; &gt;exploit&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;從攔截到的網路封包得知遊戲以ssl與伺服器連線。用&lt;a class=&#34;link&#34; href=&#34;https://docs.python.org/3/howto/sockets.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Python Sockets&lt;/a&gt;向伺服器詢問密碼是否正確最多10000次就成功啦。&lt;/p&gt;
 &lt;hr&gt;
 </description>
         </item>
         <item>
-        <title>My High School Coding Journey II</title>
-        <link>https://sinkboy-chen.github.io/p/high-school-1/</link>
+        <title>Crawl Before You Walk</title>
+        <link>https://sinkboy-chen.github.io/p/crawl-before-you-walk/</link>
         <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://sinkboy-chen.github.io/p/high-school-1/</guid>
-        <description>&lt;img src="https://sinkboy-chen.github.io/p/high-school-1/crawler2.jpg" alt="Featured image of post My High School Coding Journey II" /&gt;&lt;h3 id=&#34;契機&#34;&gt;契機&lt;/h3&gt;
+        <guid>https://sinkboy-chen.github.io/p/crawl-before-you-walk/</guid>
+        <description>&lt;img src="https://sinkboy-chen.github.io/p/crawl-before-you-walk/crawler2.jpg" alt="Featured image of post Crawl Before You Walk" /&gt;&lt;h3 id=&#34;契機&#34;&gt;契機&lt;/h3&gt;
 &lt;p&gt;我不確定我學爬蟲的契機是什麼，我腦中有兩個版本:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -101,7 +105,7 @@
 &lt;h3 id=&#34;favorite-project&#34;&gt;favorite project&lt;/h3&gt;
 &lt;p&gt;我的高中英文老師要我們每個禮拜寫5篇線上閱讀測驗。我想用爬蟲幫我寫。&lt;/p&gt;
 &lt;p&gt;但那時候還沒有chatgpt，我要怎麼讓程式回答問題呢？我想到：如果我把網站的題目全做過一遍、存下答案。當我再遇到時，查表就好了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/high-school-1/readtheory.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/crawl-before-you-walk/readtheory.png&#34;
 	width=&#34;2880&#34;
 	height=&#34;2254&#34;
 	
@@ -127,16 +131,16 @@
 </description>
         </item>
         <item>
-        <title>My High School Coding Journey I</title>
-        <link>https://sinkboy-chen.github.io/p/high-school-0/</link>
+        <title>Start of My Coding Journey</title>
+        <link>https://sinkboy-chen.github.io/p/start-of-my-coding-journey/</link>
         <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://sinkboy-chen.github.io/p/high-school-0/</guid>
-        <description>&lt;img src="https://sinkboy-chen.github.io/p/high-school-0/rocket4.jpg" alt="Featured image of post My High School Coding Journey I" /&gt;&lt;h3 id=&#34;the-start&#34;&gt;The Start&lt;/h3&gt;
-&lt;p&gt;國中升高中的暑假，我夢想當個航太工程師。我想到：火箭也需要程式才能運作吧。所以我就去學程式了。&lt;/p&gt;
+        <guid>https://sinkboy-chen.github.io/p/start-of-my-coding-journey/</guid>
+        <description>&lt;img src="https://sinkboy-chen.github.io/p/start-of-my-coding-journey/rocket4.jpg" alt="Featured image of post Start of My Coding Journey" /&gt;&lt;h3 id=&#34;the-start&#34;&gt;The Start&lt;/h3&gt;
+&lt;p&gt;國中升高中的暑假，我夢想當個航太工程師。我想到：火箭也需要程式才能運作吧，我便開始學習程式。&lt;/p&gt;
 &lt;p&gt;我選擇python。新手的我不知道怎麼樣的教學算好，就東學一點、西學一點。&lt;/p&gt;
 &lt;h3 id=&#34;first-project&#34;&gt;First Project&lt;/h3&gt;
-&lt;p&gt;我不會中打，都看著鍵盤戳，有時候打了一堆才發現是英文ಠ⁠︵⁠ಠ。因此，我就寫了把英文轉成注音的這個東西。(我完全沒改，原汁原味)&lt;/p&gt;
+&lt;p&gt;我不會中打，都看著鍵盤戳，有時候打了一堆才發現是英文ಠ⁠︵⁠ಠ。因此，我就寫了把英文轉成注音的這個程式。(我完全沒改，原汁原味)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -209,7 +213,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;di&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;letter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;成功後，我覺得我基本語法學得差不多了。我便開始四處探索，一轉眼就是三年過去。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;成功後，我覺得基本語法學得差不多了。便開始四處探索，一轉眼就是三年過去。&lt;/p&gt;
 &lt;hr&gt;
 </description>
         </item>
