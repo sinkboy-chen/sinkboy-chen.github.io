@@ -10,7 +10,7 @@
 <meta property='og:description' content='找到資安漏洞 我的第一次'>
 <meta property='og:url' content='https://sinkboy-chen.github.io/p/cracking-game-room-password/'>
 <meta property='og:site_name' content='Sinkboy'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='高中' /><meta property='article:tag' content='故事' /><meta property='article:tag' content='資安' /><meta property='article:tag' content='紀錄' /><meta property='article:published_time' content='2023-10-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-11-09T21:52:54&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='高中' /><meta property='article:tag' content='故事' /><meta property='article:tag' content='資安' /><meta property='article:tag' content='紀錄' /><meta property='article:published_time' content='2023-10-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-11-09T22:11:08&#43;08:00'/>
 <meta name="twitter:title" content="Cracking Game Room Password">
 <meta name="twitter:description" content="找到資安漏洞 我的第一次">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -312,14 +312,14 @@
 <li>怎麼讓手機跟伺服器連線</li>
 <li>怎麼尋問伺服器輸入的密碼是否正確</li>
 </ol>
-<p>我找到了<a class="link" href="https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&amp;hl=en_US"  target="_blank" rel="noopener"
+<p>我找到<a class="link" href="https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&amp;hl=en_US"  target="_blank" rel="noopener"
     >攔截網路封包的工具</a>。透過這個工具，可以看各個app在網路發送及接收的資料。</p>
 <h3 id="2-分析網路封包">2. 分析網路封包</h3>
-<p>當我嘗試遊戲房間密碼時，那個工具攔截遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到了一筆顯示我嘗試的密碼&quot;0000&quot;及&quot;密碼不正確&quot;。</p>
+<p>當我嘗試遊戲房間密碼時，那個工具攔截遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到一筆顯示我嘗試的密碼&quot;0000&quot;及&quot;密碼不正確&quot;。</p>
 <blockquote>
 <p>前面說過這是疫情期間嘛。當我研究正起勁時，隔天開始要回學校實體上課。早上我在擠滿人的公車去上學，一邊看著一坨亂碼。我從第三人稱視角想像自己，覺得自己超帥的，完全有駭客的感覺。</p>
 </blockquote>
-<p>我讓該封包以hex呈現並開始分析。當我因為毫無頭緒而漸漸絕望時，我看出了一些意義：</p>
+<p>我讓該封包以hex呈現並開始分析。當我因為毫無頭緒而漸漸絕望時，我看出一些意義：</p>
 <ol>
 <li>第一筆訊息類似打招呼。遊戲從我的手機向伺服器傳送id和password。如果正確，伺服器會回傳&quot;ok&quot;。</li>
 <li>每則訊息開頭前8個數字是訊息的長度。</li>
@@ -420,7 +420,7 @@
 
 
         <span>
-            Last updated on Nov 09, 2023 21:52 CST
+            Last updated on Nov 09, 2023 22:11 CST
         </span>
     </section></footer>
 

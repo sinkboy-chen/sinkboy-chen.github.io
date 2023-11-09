@@ -25,14 +25,14 @@
 &lt;li&gt;怎麼讓手機跟伺服器連線&lt;/li&gt;
 &lt;li&gt;怎麼尋問伺服器輸入的密碼是否正確&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;我找到了&lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&amp;amp;hl=en_US&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;我找到&lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&amp;amp;hl=en_US&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;攔截網路封包的工具&lt;/a&gt;。透過這個工具，可以看各個app在網路發送及接收的資料。&lt;/p&gt;
 &lt;h3 id=&#34;2-分析網路封包&#34;&gt;2. 分析網路封包&lt;/h3&gt;
-&lt;p&gt;當我嘗試遊戲房間密碼時，那個工具攔截遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到了一筆顯示我嘗試的密碼&amp;quot;0000&amp;quot;及&amp;quot;密碼不正確&amp;quot;。&lt;/p&gt;
+&lt;p&gt;當我嘗試遊戲房間密碼時，那個工具攔截遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到一筆顯示我嘗試的密碼&amp;quot;0000&amp;quot;及&amp;quot;密碼不正確&amp;quot;。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;前面說過這是疫情期間嘛。當我研究正起勁時，隔天開始要回學校實體上課。早上我在擠滿人的公車去上學，一邊看著一坨亂碼。我從第三人稱視角想像自己，覺得自己超帥的，完全有駭客的感覺。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;我讓該封包以hex呈現並開始分析。當我因為毫無頭緒而漸漸絕望時，我看出了一些意義：&lt;/p&gt;
+&lt;p&gt;我讓該封包以hex呈現並開始分析。當我因為毫無頭緒而漸漸絕望時，我看出一些意義：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;第一筆訊息類似打招呼。遊戲從我的手機向伺服器傳送id和password。如果正確，伺服器會回傳&amp;quot;ok&amp;quot;。&lt;/li&gt;
 &lt;li&gt;每則訊息開頭前8個數字是訊息的長度。&lt;/li&gt;
