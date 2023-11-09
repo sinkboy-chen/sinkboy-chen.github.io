@@ -11,24 +11,36 @@
         <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
         
         <guid>https://sinkboy-chen.github.io/p/cracking-game-room-password/</guid>
-        <description>&lt;img src="https://sinkboy-chen.github.io/p/cracking-game-room-password/hacker_baby0.jpg" alt="Featured image of post Cracking Game Room Password" /&gt;&lt;div class=&#34;success-box&#34;&gt;
+        <description>&lt;p&gt;&lt;div class=&#34;info-box&#34;&gt;
     以下漏洞在第一時間回報並已修復。
 &lt;/div&gt;
-&lt;p&gt;其實這只是用暴力破解的。但這是我第一次找到漏洞，我想記錄下來。&lt;/p&gt;
-&lt;h3 id=&#34;前情提要&#34;&gt;前情提要&lt;/h3&gt;
-&lt;p&gt;我高二時正逢新冠疫情，學校改成線上上課。我跟同學們會在老師留下來的會議教室玩你畫我猜。但我玩的不夠盡興，因此去下載了線上桌遊手遊。&lt;/p&gt;
-&lt;p&gt;那個手遊中，有可以用4位數密碼鎖起來的私人房間。可以嘗試無限多次密碼，但使用者介面會有些停頓。我想：如果直接從遊戲背後運作的程式下手，是不是可以避開使用者介面的停頓，快速的嘗試所有4位數組合、找到密碼?&lt;/p&gt;
-&lt;h3 id=&#34;尋找工具&#34;&gt;尋找工具&lt;/h3&gt;
+其實只是用暴力破解。但這是我第一次找到漏洞，想記錄下來。&lt;/p&gt;
+&lt;h2 id=&#34;前情提要&#34;&gt;前情提要&lt;/h2&gt;
+&lt;p&gt;我高二時正逢新冠疫情，學校改成線上上課。我跟同學們會在老師留下來的會議教室玩你畫我猜。但我玩的不夠盡興，因此去下載線上桌遊手遊。&lt;/p&gt;
+&lt;p&gt;那個手遊中，有可以用4位數密碼鎖起來的遊戲房間。任何人皆可以無限制的嘗試密碼，但每次嘗試間使用者介面會有些停頓。我想直接從遊戲背後的api下手、避開使用者介面的停頓，快速嘗試4位數組合、找到密碼。&lt;/p&gt;
+&lt;h2 id=&#34;過程&#34;&gt;過程&lt;/h2&gt;
+&lt;h3 id=&#34;1-尋找工具&#34;&gt;1. 尋找工具&lt;/h3&gt;
 &lt;p&gt;我的目標明確，要了解這個遊戲：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;怎麼讓手機跟伺服器連線&lt;/li&gt;
 &lt;li&gt;怎麼尋問伺服器輸入的密碼是否正確&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;我找到了&lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture&amp;amp;hl=en_US&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;攔截網路封包的工具&lt;/a&gt;。透過這個工具，可以看到各個app向網路傳送的資料。&lt;/p&gt;
-&lt;h3 id=&#34;分析網路封包&#34;&gt;分析網路封包&lt;/h3&gt;
-&lt;p&gt;當我嘗試遊戲房間密碼時，那個app攔截遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到了一筆顯示我嘗試的密碼&amp;quot;0000&amp;quot;及&amp;quot;密碼不正確&amp;quot;。我讓該封包以hex呈現並開始分析。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/network1.png&#34;
+    &gt;攔截網路封包的工具&lt;/a&gt;。透過這個工具，可以看各個app在網路發送及接收的資料。&lt;/p&gt;
+&lt;h3 id=&#34;2-分析網路封包&#34;&gt;2. 分析網路封包&lt;/h3&gt;
+&lt;p&gt;當我嘗試遊戲房間密碼時，那個工具攔截遊戲與伺服器溝通的網路封包。在一大堆亂碼中，我找到了一筆顯示我嘗試的密碼&amp;quot;0000&amp;quot;及&amp;quot;密碼不正確&amp;quot;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前面說過這是疫情期間嘛。當我研究正起勁時，隔天開始要回學校實體上課。早上我在擠滿人的公車去上學，一邊看著一坨亂碼。我從第三人稱視角想像自己，覺得自己超帥的，完全有駭客的感覺。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我讓該封包以hex呈現並開始分析。當我因為毫無頭緒而漸漸絕望時，我看出了一些意義：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一筆訊息類似打招呼。遊戲從我的手機向伺服器傳送id和password。如果正確，伺服器會回傳&amp;quot;ok&amp;quot;。&lt;/li&gt;
+&lt;li&gt;每則訊息開頭前8個數字是訊息的長度。&lt;/li&gt;
+&lt;li&gt;第二行前8個數字是現在時間。&lt;/li&gt;
+&lt;li&gt;有類似序列號的東西。遊戲伺服器回覆一則訊息時，會寫著要回覆的訊息的序列號。&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/network8.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;1705&#34;
 	
@@ -54,18 +66,8 @@
 		data-flex-grow=&#34;57&#34;
 		data-flex-basis=&#34;137px&#34;
 	
-&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;前面說過這是疫情期間嘛。當我研究正起勁時，隔天開始要回學校實體上課。早上我在擠滿人的公車去上學，一邊看著一串亂碼。我從第三人稱視角想像自己，覺得自己超帥的，完全有駭客的感覺。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;回到正題，當我漸漸絕望時，我看出了一些意義：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;該封包的第一筆資料類似打招呼。遊戲從我的手機向伺服器傳送id和password。如果正確，伺服器會回傳&amp;quot;ok&amp;quot;。&lt;/li&gt;
-&lt;li&gt;每則訊息開頭前8個數字是訊息的長度。&lt;/li&gt;
-&lt;li&gt;第二行前8個數字是時間。&lt;/li&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/network7.jpg&#34;
+&gt;
+&lt;img src=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/network7.jpg&#34;
 	width=&#34;1080&#34;
 	height=&#34;558&#34;
 	
@@ -79,9 +81,28 @@
 		data-flex-basis=&#34;464px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h3 id=&#34;exploitpcracking-game-room-password-exploit&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password-exploit/&#34; &gt;exploit&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;從攔截到的網路封包得知遊戲以ssl與伺服器連線。用&lt;a class=&#34;link&#34; href=&#34;https://docs.python.org/3/howto/sockets.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Python Sockets&lt;/a&gt;向伺服器詢問密碼是否正確最多10000次就成功啦。&lt;/p&gt;
+&lt;h3 id=&#34;3-寫-exploitpcracking-game-room-passwordexploit&#34;&gt;3. 寫 &lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/exploit&#34; &gt;exploit&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;從攔截到的網路封包得知遊戲以TCP與伺服器連線。用&lt;a class=&#34;link&#34; href=&#34;https://docs.python.org/3/howto/sockets.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Python Sockets&lt;/a&gt;向伺服器詢問密碼是否正確最多10000次就可以了。&lt;/p&gt;
+&lt;h3 id=&#34;4-結果&#34;&gt;4. 結果&lt;/h3&gt;
+&lt;p&gt;沒有如我預期的快，大約要17分鐘才能嘗試所有10000種組合。&lt;/p&gt;
+&lt;p&gt;可以嘗試的改善方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;優先嘗試生日組成的4位數密碼，當我在測試時發現很多房間密碼都是生日。這樣就從10000種組合縮減到365種。&lt;/li&gt;
+&lt;li&gt;使用 multi threading 嘗試密碼。畢竟delay都是遊戲伺服器那端造成的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;結局&#34;&gt;結局&lt;/h2&gt;
+&lt;p&gt;在測試時，因為一些&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/things&#34; &gt;事情&lt;/a&gt;我嚇到了^_^。隨後立刻寫信告訴遊戲公司這個漏洞，並把電腦內的截圖紀錄、exploit、log檔案全部刪掉也刪掉了遊戲帳號。&lt;/p&gt;
+&lt;p&gt;不久後，客服回覆說工程師團隊那邊若有進展會跟我聯繫。但自此就杳無音訊了。&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;隨時間過去，我漸漸忘了此事。直到有天想起，我再次把遊戲下載回來，發現遊戲更新了。現在最多只能嘗試密碼三次(後端限制的)。我微微地笑了。&lt;/p&gt;
+&lt;p&gt;我覺得這整件事很值得我紀念，但我竟然把所有檔案刪了！喜出望外，我去垃圾桶翻時，發現部分檔案不知道為甚麼沒有被永久刪除。我開心的把它們還原。(我甚至去找disk recovery software，可惜大多數的檔案還是一去不復返)&lt;/p&gt;
+&lt;h2 id=&#34;心得&#34;&gt;心得&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;我第一次接觸到好多東西，成功後超有成就感。&lt;/li&gt;
+&lt;li&gt;我本來就打算回報漏洞。但經過這次，我了解到：測試漏洞前要先保護自己，避免被嚇破膽。&lt;/li&gt;
+&lt;li&gt;我對資安的興趣暴漲，這之後興奮地去上了一些資安的課程。這算是我對資安的起點。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 </description>
         </item>
@@ -91,7 +112,7 @@
         <pubDate>Wed, 25 Oct 2023 00:00:00 +0000</pubDate>
         
         <guid>https://sinkboy-chen.github.io/p/crawl-before-you-walk/</guid>
-        <description>&lt;img src="https://sinkboy-chen.github.io/p/crawl-before-you-walk/crawler2.jpg" alt="Featured image of post Crawl Before You Walk" /&gt;&lt;h3 id=&#34;契機&#34;&gt;契機&lt;/h3&gt;
+        <description>&lt;h2 id=&#34;契機&#34;&gt;契機&lt;/h2&gt;
 &lt;p&gt;我不確定我學爬蟲的契機是什麼，我腦中有兩個版本:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -101,9 +122,9 @@
 &lt;p&gt;我想學厲害的AI。我看文章說訓練AI的圖片要用程式爬，我就去學了。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;favorite-project&#34;&gt;favorite project&lt;/h3&gt;
+&lt;h2 id=&#34;favorite-project&#34;&gt;favorite project&lt;/h2&gt;
 &lt;p&gt;我的高中英文老師要我們每個禮拜寫5篇線上閱讀測驗。我想用爬蟲幫我寫。&lt;/p&gt;
-&lt;p&gt;但那時候還沒有chatgpt，我要怎麼讓程式回答問題呢？我想到：如果我把網站的題目全做過一遍、存下答案。當我再遇到時，查表就好了。&lt;/p&gt;
+&lt;p&gt;但那時候還沒有chatgpt，我要怎麼讓程式回答問題呢？我想到：如果用程式把網站的題目全做過一遍、存下答案。當程式再遇到時，查表就好了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://sinkboy-chen.github.io/p/crawl-before-you-walk/readtheory.png&#34;
 	width=&#34;2880&#34;
 	height=&#34;2254&#34;
@@ -123,7 +144,7 @@
 &lt;div class=&#34;info-box&#34;&gt;
     在此向立意良善的網站和認真的英文老師道歉。
 &lt;/div&gt;
-&lt;h3 id=&#34;總結&#34;&gt;總結&lt;/h3&gt;
+&lt;h2 id=&#34;總結&#34;&gt;總結&lt;/h2&gt;
 &lt;p&gt;學完爬蟲後，我爬了一大堆漫畫和各式各樣的網站，也了解了一些web表層的知識。
 我覺得爬蟲是一個好入手、有成就感、實用的好東西。&lt;/p&gt;
 &lt;hr&gt;
@@ -135,10 +156,10 @@
         <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
         
         <guid>https://sinkboy-chen.github.io/p/start-of-my-coding-journey/</guid>
-        <description>&lt;img src="https://sinkboy-chen.github.io/p/start-of-my-coding-journey/rocket4.jpg" alt="Featured image of post Start of My Coding Journey" /&gt;&lt;h3 id=&#34;the-start&#34;&gt;The Start&lt;/h3&gt;
+        <description>&lt;h2 id=&#34;the-start&#34;&gt;The Start&lt;/h2&gt;
 &lt;p&gt;國中升高中的暑假，我夢想當個航太工程師。我想到：火箭也需要程式才能運作吧，我便開始學習程式。&lt;/p&gt;
 &lt;p&gt;我選擇python。新手的我不知道怎麼樣的教學算好，就東學一點、西學一點。&lt;/p&gt;
-&lt;h3 id=&#34;first-project&#34;&gt;First Project&lt;/h3&gt;
+&lt;h2 id=&#34;first-project&#34;&gt;First Project&lt;/h2&gt;
 &lt;p&gt;我不會中打，都看著鍵盤戳，有時候打了一堆才發現是英文ಠ⁠︵⁠ಠ。因此，我就寫了把英文轉成注音的這個程式。(我完全沒改，原汁原味)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
