@@ -93,7 +93,7 @@
 &lt;li&gt;使用 multi threading 嘗試密碼。畢竟delay都是遊戲伺服器那端造成的。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;結局&#34;&gt;結局&lt;/h2&gt;
-&lt;p&gt;在測試時，因為一些&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/things&#34; &gt;事情&lt;/a&gt;我嚇到了^_^。隨後立刻寫信告訴遊戲公司這個漏洞，並把電腦內的截圖紀錄、exploit、log檔案全部刪掉也刪除了遊戲帳號。&lt;/p&gt;
+&lt;p&gt;在測試時，因為一些&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/private&#34; &gt;事情&lt;/a&gt;我嚇到了^_^。隨後立刻寫信告訴遊戲公司這個漏洞，並把電腦內的截圖紀錄、exploit、log檔案全部刪掉也刪除了遊戲帳號。&lt;/p&gt;
 &lt;p&gt;不久後，客服回覆說工程師團隊那邊若有進展會跟我聯繫。但自此就杳無音訊。&lt;/p&gt;
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
 &lt;p&gt;隨時間過去，我漸漸忘卻此事。直到有天想起，我再次把遊戲下載回來，發現遊戲更新了。現在最多只能嘗試密碼三次(後端限制的)。我微微地笑了。&lt;/p&gt;
