@@ -6,6 +6,59 @@
         <description>Recent content on Sinkboy</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language><atom:link href="https://sinkboy-chen.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Bye Bye</title>
+        <link>https://sinkboy-chen.github.io/p/bye-bye/</link>
+        <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://sinkboy-chen.github.io/p/bye-bye/</guid>
+        <description>&lt;h2 id=&#34;從前從前&#34;&gt;從前從前&lt;/h2&gt;
+&lt;p&gt;學長在部落格的修課分享，像張地圖。讓初入大學、在黑暗中迷茫的我，有了一張紙。&lt;/p&gt;
+&lt;p&gt;還有我想記錄我高中關於coding的事。&lt;/p&gt;
+&lt;p&gt;所以我架了這個blog。&lt;/p&gt;
+&lt;h2 id=&#34;現在現在&#34;&gt;現在現在&lt;/h2&gt;
+&lt;p&gt;黑暗中的我見到一絲光線，出口的方向就在那頭!&lt;/p&gt;
+&lt;p&gt;洞外的花花世界令我目眩神迷，我無暇探詢我何以落入此洞。亦無心指引後人脫困。&lt;/p&gt;
+&lt;p&gt;草草紀錄於此，待他日重返，補坑。使過客不再落入。&lt;/p&gt;
+&lt;h2 id=&#34;草草紀錄&#34;&gt;草草紀錄&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/start-of-my-coding-journey&#34; &gt;開始&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/crawl-before-you-walk/&#34; &gt;爬蟲&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;資安
+&lt;div class=&#34;info-box&#34;&gt;
+    以下漏洞在第一時間回報並已修復。
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://sinkboy-chen.github.io/p/cracking-game-room-password/&#34; &gt;暴力破解遊戲房間密碼&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;社群軟體漏洞探索
+&lt;ol&gt;
+&lt;li&gt;以race condition得到 426331744 x幣(500 x幣≈1 NTD)&lt;/li&gt;
+&lt;li&gt;實現以xss偷取 x幣&lt;/li&gt;
+&lt;li&gt;以Facebook Oauth任意帳號登入(user/admin)&lt;/li&gt;
+&lt;li&gt;以api authentication漏洞，得以取得用戶個資(line id、手機、gmail)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;參加了一些AIS3的活動&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://play.google.com/store/apps/details?id=com.sinkboy.randomnumberv13&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;The Invisible Hand&lt;/a&gt; android app
+&lt;div class=&#34;warning-box&#34;&gt;
+    作者曾說：沒下載的人是他沒眼光。
+&lt;/div&gt;
+&lt;div class=&#34;warning-box&#34;&gt;
+    作者亦說過：大概沒有人看得懂他寫的遊戲說明。
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;用adb做遊戲外掛&lt;/li&gt;
+&lt;li&gt;用Django跟同學合辦奇怪的解謎活動&lt;/li&gt;
+&lt;li&gt;做了科展&lt;/li&gt;
+&lt;li&gt;喜歡genetic algorithm一陣子&lt;/li&gt;
+&lt;li&gt;幻想自己想到怎麼實現agi&lt;/li&gt;
+&lt;li&gt;還幻想過很多事&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        <item>
         <title>Cracking Game Room Password</title>
         <link>https://sinkboy-chen.github.io/p/cracking-game-room-password/</link>
         <pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate>
